@@ -9,6 +9,8 @@ function verificaConsole() {
   console.log(`A media e ${calculaMedia(2, 3, 4)}`);
   console.log(`O maior numero e ${maiorNumero(2, 3)}`);
   console.log(`Quadrado de um numero = ${quadradoDeUmNumero(4)}`);
+  console.log(calculaFatorial(6));
+  console.log(tabuada(2));
 }
 
 function verificaAlert() {
@@ -57,4 +59,57 @@ function maiorNumero(numero1, numero2) {
 //Criar uma função que recebe um número como parâmetro e retorna o resultado da multiplicação desse número por ele mesmo
 function quadradoDeUmNumero(numero) {
   return numero * numero;
+}
+
+//--------------------------------------------------------------------------------------------------------
+//Crie uma função que calcule o índice de massa corporal (IMC) de uma pessoa, a partir de sua altura, em metros, e peso, em quilogramas, que serão recebidos como parâmetro.
+function calculaIMC(altura, peso) {
+  let iMC = peso / altura ** 2;
+  console.log(`De acordo com os dados que forneceste o seu IMC e ${iMC}`);
+}
+
+//Crie uma função que calcule o valor do fatorial de um número passado como parâmetro.
+function calculaFatorial(numero) {
+  let verifica = numero;
+  let fatorial = 1;
+  if (numero == 0) {
+    fatorial = 1;
+  } else {
+    while (numero > 1) {
+      fatorial = fatorial * numero;
+      numero--;
+    }
+  }
+  console.log(`O fatorial de ${verifica} e ${fatorial}.`);
+}
+
+//Crie uma função que converte um valor em dólar, passado como parâmetro, e retorna o valor equivalente em reais. Para isso, considere a cotação do dólar igual a R$4,80.
+function converteMoeda(moedaEmDolar) {
+  return moedaEmDolar * 4.8;
+}
+
+//Crie uma função que mostre na tela a área e o perímetro de uma sala retangular, utilizando altura e largura que serão dadas como parâmetro.
+function calculaAreaPerimetro(altura, largura) {
+  let area = altura * largura;
+  let perimetro = 2 * (altura + largura);
+
+  alert(
+    `Com a altura de ${altura} e largura de ${largura} a area vale ${area} e o perimetro ${perimetro}.`
+  );
+}
+
+//Crie uma função que mostre na tela a área e o perímetro de uma sala circular, utilizando seu raio que será fornecido como parâmetro. Considere Pi = 3,14.
+function calculaAPCirculo(raio) {
+  let perimetro = 2 * 3.14 * raio;
+  let area = 3.14 * raio ** 2;
+}
+
+//Crie uma função que mostre na tela a tabuada de um número dado como parâmetro.
+function tabuada(numero) {
+  let contador = 1;
+  console.log(`Tabuada de ${numero}`);
+  while (contador <= 12) {
+    console.log(`${numero} x ${contador} = ${numero * contador}`);
+    contador++;
+  }
 }
